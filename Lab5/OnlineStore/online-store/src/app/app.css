@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: dodgerblue;
+}
+p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: cornflowerblue;
+  font-style: italic;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.categories button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #e0e0e0;
+  transition: 0.3s;
+}
+
+.categories button:hover {
+  background: #d4d4d4;
+}
+
+.categories button.active {
+  background: #1976d2;
+  color: white;
+}

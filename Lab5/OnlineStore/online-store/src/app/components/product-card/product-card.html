@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="image-container">
+    <img [src]="product().image" [alt]="product().name" />
+  </div>
+
+  <h3 class="title">{{ product().name }}</h3>
+
+  <p class="description">{{ product().description }}</p>
+
+  <div class="rating">
+    @for (star of getStars(product().rating); track $index) {
+      <span class="star">★</span>
+    }
+    @if (hasHalfStar(product().rating)) {
+      <span class="star">✰</span>
+    }
+    <span class="rating-number">{{ product().rating }}</span>
+  </div>
+
+  <div class="price">
+    {{ product().price | number }} ₸
+  </div>
+
+  <div class="likes">
+    ❤️ {{ product().likes }}
+  </div>
+
+  <div class="buttons">
+
+    <button (click)="like()" class="like-btn">
+      Like
+    </button>
+
+    <button (click)="onDelete()" class="delete-btn">
+      Delete
+    </button>
+
+    <a [href]="product().link" target="_blank" class="view-btn">
+      View on Kaspi
+    </a>
+
+    <a
+      [href]="'https://wa.me/?text=' + encode('Check out this product: ' + product().link)"
+      target="_blank"
+      class="whatsapp-btn">
+      WhatsApp
+    </a>
+
+    <a
+      [href]="'https://t.me/share/url?url=' + encode(product().link) + '&text=' + encode(product().name)"
+      target="_blank"
+      class="telegram-btn">
+      Telegram
+    </a>
+
+  </div>
+</div>

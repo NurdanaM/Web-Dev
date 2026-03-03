@@ -1,0 +1,30 @@
+<h2>Albums</h2>
+
+@if (loading) {
+  <p class="muted">Loading albums...</p>
+} @else {
+  @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  }
+
+  @if (albums$ | async; as albums) {
+    @if (albums.length === 0) {
+      <p class="muted">No albums found.</p>
+    } @else {
+      <ul class="list">
+        @for (a of albums; track a.id) {
+          <li class="item">
+            <a class="link" [routerLink]="['/albums', a.id]">
+              <span class="id">#{{ a.id }}</span>
+              <span class="title">{{ a.title }}</span>
+            </a>
+
+            <button class="danger" type="button" (click)="deleteAlbum(a.id)">
+              Delete
+            </button>
+          </li>
+        }
+      </ul>
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<h2>Album Details</h2>
+
+@if (album$ | async; as album) {
+  @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  }
+
+  @if (album) {
+    <div class="card">
+      <p><b>ID:</b> {{ album.id }}</p>
+      <p><b>User ID:</b> {{ album.userId }}</p>
+
+      <label class="label">
+        <span>Title</span>
+        <input class="input" type="text" [(ngModel)]="editedTitle" name="title" />
+      </label>
+
+      <div class="actions">
+        <button class="btn" type="button" (click)="save(album)">Save</button>
+
+        <a class="btn" [routerLink]="['/albums', album.id, 'photos']">View Photos</a>
+        <a class="btn" routerLink="/albums">Back</a>
+      </div>
+    </div>
+  } @else {
+    <p class="muted">Album not found.</p>
+  }
+} @else {
+  <p class="muted">Loading album...</p>
+}

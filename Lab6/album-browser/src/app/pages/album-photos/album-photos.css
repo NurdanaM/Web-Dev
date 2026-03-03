@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.tile {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  display: grid;
+  gap: 8px;
+  place-items: center;
+}
+.thumb { width: 100%; height: auto; border-radius: 10px; }
+.caption {
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+.btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.muted { color: #666; }
+.error { color: #b00020; }

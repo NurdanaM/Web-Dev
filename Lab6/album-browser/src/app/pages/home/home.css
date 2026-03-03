@@ -1,0 +1,16 @@
+.card {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}

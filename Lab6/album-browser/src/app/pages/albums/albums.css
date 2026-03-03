@@ -1,0 +1,17 @@
+.list { list-style: none; padding: 0; margin: 12px 0; }
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.link { text-decoration: none; display: flex; gap: 10px; flex: 1; }
+.id { font-weight: 700; }
+.title { color: #222; }
+.danger { padding: 8px 10px; border: 1px solid #ccc; border-radius: 10px; }
+.muted { color: #666; }
+.error { color: #b00020; }
